@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { // es la que va a ver el navegador
+    return view('index');
+})->name('/'); //esta es la ruta dentro de nuestro proyecto un alias
+
+Route::get('/crearInstitucion', function () {
+    return view('crearInstitucion');
+})->name('/crearInstitucion');

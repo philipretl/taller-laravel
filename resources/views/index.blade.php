@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    
+@extends('plantilla.plantilla')
 
+@section('subtittle')
+  <h1>Listar Instituciones</h1>
+@endsection
 
-  </body>
-</html>
+@section('contenido')
+
+@endsection
