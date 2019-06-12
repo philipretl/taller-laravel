@@ -8,7 +8,7 @@
 
       <li><a><i class="fa fa-building"></i> Instituciones<span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="{{route('index')}}">Listar</a></li>
+          <li><a href="{{route('listarInstituciones')}}">Listar</a></li>
           <li><a href="{{route('createInstitution')}}">Crear Institucion</a></li>
 
 

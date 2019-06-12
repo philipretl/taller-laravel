@@ -72,7 +72,7 @@
 
 
             </div>
-
+            @yield('contenido') // caja donde se guardara todo lo que se cargue dinamicamente
             <!-- contenido -->
 
           </div>

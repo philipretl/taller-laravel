@@ -16,11 +16,17 @@ Route::get('/', function () { // es la que va a ver el navegador
 })->name('index'); //esta es la ruta dentro de nuestro proyecto un alias
   //no sirve para saber como se debe mover nuestra aplicación
 
-Route::get('/crearInstitucion', function () {
-    return view('crearInstitucion');
-})->name('createInstitution');
 
 
+Route::prefix('admin')->group(function(){
+
+  Route::view('/crearInstitucion','crearInstitucion')->name('createInstitution');
+
+  Route::get('/listarInstituciones','Admin\InstitucionController@index')->name('listarInstituciones');
+
+  Route::post('/registrarInstitucion','Admin\InstitucionController@store')->name('registrarInstitucion');
+  // [tipo de ruta] [nombre para el navegador] [Ruta del controlador] @ [metodo a usar] [alias para el programador]
+});
 
 /*Route::prefix('/admin')->group(function(){
 
