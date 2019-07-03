@@ -34,4 +34,34 @@ class InstitucionController extends Controller
       //return redirect()->route('createInstitution'); // retornase a una ruta
 
     }
+
+    public function edit(Request $request){
+      //dd('voy a editar', $request->id);
+
+      $institucion = Institucion::find($request->id);
+
+      //dd($institucion);
+      return view('editarInstitucion')->with('ins',$institucion);
+    }
+
+    public function update(Request $request){
+      $institucion = Institucion::find($request->id);
+      //dd($institucion);
+      $institucion->fill($request->all());
+      $institucion->save();
+      return redirect()->route('listarInstituciones');
+    }
+
+    public function delete(Request $request){
+      //dd($request);
+      $institucion = Institucion::find($request->id);
+      if($institucion!=null){
+        $institucion->delete();
+      }else{
+        dd('no se pudo eliminar');
+      }
+      return redirect()->route('listarInstituciones');
+
+    }
+
 }

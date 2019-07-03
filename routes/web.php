@@ -26,6 +26,18 @@ Route::prefix('admin')->group(function(){
 
   Route::post('/registrarInstitucion','Admin\InstitucionController@store')->name('registrarInstitucion');
   // [tipo de ruta] [nombre para el navegador] [Ruta del controlador] @ [metodo a usar] [alias para el programador]
+
+  Route::get('/editarInstitucion/{id}','Admin\InstitucionController@edit')->name('editarInstitucion');
+
+  Route::put('/actualizarInstitucion/','Admin\InstitucionController@update')->name('actualizarInstitucion');
+
+  Route::delete('/eliminarInstitucion', 'Admin\InstitucionController@delete')->name('eliminarInstitucion');
+
+  //Rutas de los docentes
+
+  Route::view('/crearDocente','crearDocente')->name('crearDocente');
+
+
 });
 
 /*Route::prefix('/admin')->group(function(){

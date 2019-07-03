@@ -19,7 +19,7 @@
         <ul class="nav child_menu">
 
           <li><a href="">Listar</a></li>
-          <li><a href="">Crear Docentes</a></li>
+          <li><a href="{{route('crearDocente')}}">Crear Docentes</a></li>
 
 
         </ul>

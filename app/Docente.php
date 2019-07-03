@@ -10,7 +10,7 @@ class Docente extends Model
     protected $fillable=['nombre', 'tipo', 'institucion_id'];
 
     public function institucion(){
-      return $this->belonsTo('App\Institucion','institucion_id', 'id');
+      return $this->belongsTo('App\Institucion','institucion_id', 'id');
       // ...belonsgTo([nombre_modelo], [FK_modelo], [Pk_de_este_modelo],)
     }
 

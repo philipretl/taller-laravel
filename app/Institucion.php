@@ -18,4 +18,5 @@ class Institucion extends Model
       return $this->hasOne('App\Rector','institucion_id', 'id');
         // ...hasOne([nombre_modelo], [FK_modelo], [Pk_de_este_modelo],)
     }
+    
 }
