@@ -35,7 +35,9 @@ Route::prefix('admin')->group(function(){
 
   //Rutas de los docentes
 
-  Route::view('/crearDocente','crearDocente')->name('crearDocente');
+  Route::get('/crearDocente','Admin\DocenteController@create')->name('crearDocente');
+  Route::post('/registrarDocente','Admin\DocenteController@store')->name('registrarDocente');
+
 
 
 });

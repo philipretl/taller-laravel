@@ -63,7 +63,7 @@
                         <h4>{{$a}}</h4>
                       @endisset
                       <br>
-                      <form action="" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                      <form action="{{route('registrarDocente')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
                          {{ csrf_field() }}
                          <div class="form-group">
                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre Docente<span class="required">*</span>
@@ -77,9 +77,26 @@
                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo">tipo<span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select name="tipo">
+                            <select name="tipo" class= "form-control">
                               <option value="ocasional">Ocasional</option>
                               <option value="planta">planta</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo">Institución<span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select name="institucion_id" class= "form-control">
+                              @if ($instituciones!=null)
+                                @foreach ($instituciones as $insti)
+                                  <option value="{{$insti->id}}">{{$insti->nombre}}</option>
+                                @endforeach
+
+                              @endif
+
+
                             </select>
                           </div>
                         </div>
